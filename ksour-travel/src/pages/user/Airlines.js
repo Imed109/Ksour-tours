@@ -1,33 +1,18 @@
-import React , { useEffect } from "react";
+// Airlines.js
+
+import React, { useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
-import { useDispatch,useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { fetchAirlines } from "../../JS/airlinesSlice";
 import UserLayout from "./useLayout/userlayout";
-
+import "./css/airlines.scss";
 
 const CustomCard = ({ company }) => {
   return (
-    <div
-      style={{
-        width: "10rem",
-        border: "1px solid #ccc",
-        borderRadius: "5px",
-        padding: "10px",
-        margin: "10px",
-      }}
-    >
-      <img
-        src={company.image}
-        alt={company.name}
-        style={{
-          width: "100%",
-          height: "100px",
-          objectFit: "cover",
-          borderRadius: "5px",
-        }}
-      />
-      <div style={{ padding: "10px" }}>
+    <div className="airline-card">
+      <img src={company.image} alt={company.name} className="airline-image" />
+      <div className="airline-info">
         <h3>{company.name}</h3>
       </div>
     </div>
@@ -41,23 +26,53 @@ const Airlines = () => {
   useEffect(() => {
     dispatch(fetchAirlines());
   }, [dispatch]);
+
   return (
     <UserLayout>
-    <div>
-    
+      <div className="airlines-container">
+        <h1>Compagnies aériennes</h1>
+        <h4>Réserver un vol pas cher avec la compagnie de choix</h4>
 
-      <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
-        {companies.map((company, index) => (
-          <CustomCard key={index} company={company} />
-        ))}
+        <div className="airlines-list">
+          {companies.map((company, index) => (
+            <CustomCard key={index} company={company} />
+          ))}
+        </div>
+
+        <div className="airlines-about">
+          <h2>
+            Réservez votre Vol & achetez vos billets d’avion aux meilleurs
+            tarifs
+          </h2>
+          <p>
+            Vous êtes en train de planifier votre prochain voyage, pour
+            découvrir une nouvelle destination, pour un voyage en famille, pour
+            une virée entre amis ou pour un voyage d'affaires ? Vous souhaitez
+            dénicher les billets d’avion qui respectent votre budget et qui vous
+            permettent de profiter de votre voyage ? Ksour Tour vous propose les
+            meilleures offres et vous facilite la réservation de vos billets
+            d’avion à prix imbattables selon votre plan de voyage et surtout
+            selon votre budget !
+          </p>
+          <h2>Trouvez votre Vol & comparez les meilleures offres</h2>
+          <p>
+            Au départ des aéroports de la Tunisie et de partout dans le monde,
+            nous vous proposons les meilleures offres des compagnies aériennes
+            nationales et internationales : Tunisair, Nouvelair, Air France,
+            Lufthansa, Qatar Airways Turkish Airlines,… Recherchez vos billets
+            d’avion selon vos critères et vos besoins. Comparez puis
+            selectionnez le vol qui respecte vos dates, vos horaires de départs
+            et d’arrivée et surtout votre budget.
+          </p>
+          {/* The provided French text goes here */}
+        </div>
+
+        <div className="reservation-button">
+          <Button as={Link} to="/formulaire" variant="primary">
+            Réservation
+          </Button>
+        </div>
       </div>
-      <div style={{ display: "flex", justifyContent: "center", marginTop: "20px" }}>
-        <Button as={Link} to="/formulaire" variant="primary">
-          Reservation
-        </Button>
-      </div>
-      
-    </div>
     </UserLayout>
   );
 };

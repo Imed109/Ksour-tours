@@ -21,7 +21,7 @@ const NavBar = () => {
           <li><Link to="/omra">Omra</Link></li>
           <li><Link to="/hotels">Hotels</Link></li>
           <li><Link to="/contact">Contact</Link></li>
-          <li><button>Se connecter</button></li>
+          <li><button >Se connecter</button></li>
         </ul>
       </div>
     </nav>
