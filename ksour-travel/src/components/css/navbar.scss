@@ -1,0 +1,74 @@
+/* navbar.scss */
+.navbar-wrapper {
+  padding-left: 20px; /* Add space on the left */
+  padding-right: 20px; /* Add space on the right */
+  background-color: #FEF1D0
+  ; /* Set the background color for the entire container */
+
+}
+.navbar {
+  background-color:transparent; /* White greyish background color */
+  padding: 15px 40px; /* Adjust padding for left and right space */  color: #343a40; /* Text color */
+  font-family: 'Arial', sans-serif; /* Change to your desired font */
+  display: flex;
+  justify-content: space-between; /* Distribute items evenly */
+  align-items: center; /* Align items vertically */
+}
+
+.navbar-brand a {
+  color: #343a40; /* Brand text color */
+  text-decoration: none; /* Remove default link underline */
+  font-weight: bold; /* Adjust font weight */
+  font-size: 24px; /* Increase brand font size */
+}
+
+.nav-links {
+  list-style: none; /* Remove default list styles */
+  display: flex; /* Display links in a row */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+.nav-links li {
+  margin-left: 40px; /* Adjust spacing between links */
+}
+
+.nav-links a {
+  color: #343a40; /* Link text color */
+  text-decoration: none; /* Remove default link underline */
+  font-size: 25px; /* Adjust default link font size */
+  transition: color 0.3s ease, font-size 0.3s ease; /* Add transition for smooth color and font size change */
+}
+
+.nav-links a:hover {
+  color: #f57c00; /* Change the text color on hover */
+  font-size: 35px; /* Adjust font size on hover */
+}
+button {
+  background-color: #ffab40; /* Lighter orange button background color */
+  color: #343a40; /* Button text color */
+  border: none;
+  padding: 8px 16px; /* Adjust button padding */
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Arial', sans-serif; /* Change to your desired font */
+  font-size: 16px; /* Adjust button font size */
+}
+
+button:hover {
+  background-color: #ffffff; /* Lighter button background color on hover */
+  color: #343a40; /* Button text color on hover */
+}
+
+.logo {
+  width: 100px; /* Adjust the width of your logo */
+  height: 100px; /* Adjust the height to match the width for a circular shape */
+  border-radius: 50%; /* Make the image circular */
+  margin-right: 20px; /* Add space between the logo and text */
+}
+.brand-text {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; /* Change to your desired font */
+  font-size:35px; /* Adjust font size */
+  /* Other font styles if needed */
+}

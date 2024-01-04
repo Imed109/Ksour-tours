@@ -1,0 +1,21 @@
+/* hero.scss */
+
+.hero-container {
+    position: relative;
+    min-height: 500px; /* Set the desired minimum height */
+    background-image: url('../../assests/hero1.jpg'); /* Add your background image */
+    background-size: cover;
+    background-position: fill;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff; /* Text color */
+  }
+  
+  .hero-content {
+    /* Additional styles for your Hero content */
+    /* Adjust font size, margins, paddings, etc. */
+    
+  }
+  

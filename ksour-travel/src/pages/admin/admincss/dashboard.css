@@ -1,0 +1,63 @@
+/* dashboard.css */
+
+/* Style for table */
+.table-container {
+    margin-top: 30px;
+  }
+  
+  .table-container h2 {
+    margin-bottom: 20px;
+  }
+  
+  /* Style for table rows */
+  .done-row {
+    background-color: #c8e6c9; /* Light green background */
+  }
+  
+  .undone-row {
+    background-color: #ffcdd2; /* Light red background */
+  }
+  
+  /* Style for tick icons */
+  .done-icon::before {
+    content: "\u2713"; /* Unicode checkmark character */
+    color: green;
+    font-size: 1.2em;
+  }
+  
+  .undone-icon::before {
+    content: "\u2718"; /* Unicode cross mark character */
+    color: red;
+    font-size: 1.2em;
+  }
+  
+  /* Style for formulaire card */
+  .card {
+    margin-top: 20px;
+  }
+  
+  .card-title {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
+  
+  .card-text {
+    font-size: 1.2em;
+  }
+  
+  /* Style for action buttons */
+  .done-btn {
+    background-color: green;
+    border-color: green;
+  }
+  
+  .undone-btn {
+    background-color: red;
+    border-color: red;
+  }
+  
+  .done-btn:hover,
+  .undone-btn:hover {
+    opacity: 0.8;
+  }
+  

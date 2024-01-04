@@ -1,0 +1,30 @@
+// contact.scss
+
+.contact-container {
+    background-size: cover;
+    background-position:  center;    background-size: fill;
+    background-repeat: no-repeat;
+    color: #626060; /* Text color */
+    padding: 250px 0; /* Add padding as needed */
+  }
+  
+  h2 {
+    font-size: 36px; /* Adjust heading font size */
+    /* Other heading styles if needed */
+  }
+  
+  p {
+    font-size: 18px; /* Adjust paragraph font size */
+    /* Other paragraph styles if needed */
+  }
+  
+  ul {
+    list-style-type: none; /* Remove default list styles */
+    padding-left: 0; /* Remove default list padding */
+  }
+  
+  li {
+    margin-bottom: 10px; /* Adjust list item margin */
+    /* Other list item styles if needed */
+  }
+  
