@@ -31,7 +31,7 @@ const Airlines = () => {
     <UserLayout>
       <div className="airlines-container">
         <h1>Compagnies aériennes</h1>
-        <h4>Réserver un vol pas cher avec la compagnie de choix</h4>
+        <h4>Réserver un vol pas cher avec la compagnie de votre choix</h4>
 
         <div className="airlines-list">
           {companies.map((company, index) => (

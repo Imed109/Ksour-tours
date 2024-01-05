@@ -1,0 +1,16 @@
+
+/* adminHotels.scss */
+.admin-hotels-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .left-section {
+    width: 50%; /* Adjust width as needed */
+  }
+  
+  .right-section {
+    width: 50%; /* Adjust width as needed */
+  }
+  

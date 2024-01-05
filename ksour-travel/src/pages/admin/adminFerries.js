@@ -17,6 +17,14 @@ const AdminFerries = () => {
     dispatch(fetchShips());
   }, [dispatch]);
 
+  const addButtonText = "Ajouter un Ferry"; // Text translation
+  const addShipTitle = "Ajouter un Ferry"; // Title translation
+  const removeButtonText = "Supprimer"; // Button translation
+  const ferriesListTitle = "Liste des Ferries"; // Title translation
+  const namePlaceholderText = "Nom"; // Placeholder translation
+  const imagePlaceholderText = "URL de l'image"; // Placeholder translation
+  const descriptionPlaceholderText = "Description"; // Placeholder translation
+
   const handleAddShip = async () => {
     try {
       await axios.post("http://localhost:3001/ferries", newShip);
@@ -38,56 +46,55 @@ const AdminFerries = () => {
 
   return (
     <AdminLayout>
-    <Container className="d-flex justify-content-center align-items-center" style={{ minHeight: "100vh", width: "90%" }}>
-      <div>
-        <h2 className="mb-4">Ferries List</h2>
-        <div className="mb-4">
-          <h3>Add Ship</h3>
-          <Form>
-            <Form.Group controlId="shipName">
-              <Form.Control
-                type="text"
-                placeholder="Name"
-                value={newShip.name}
-                onChange={(e) => setNewShip({ ...newShip, name: e.target.value })}
-              />
-            </Form.Group>
-            <Form.Group controlId="shipImage">
-              <Form.Control
-                type="text"
-                placeholder="Image URL"
-                value={newShip.image}
-                onChange={(e) => setNewShip({ ...newShip, image: e.target.value })}
-              />
-            </Form.Group>
-            <Form.Group controlId="shipDescription">
-              <Form.Control
-                type="text"
-                placeholder="Description"
-                value={newShip.description}
-                onChange={(e) => setNewShip({ ...newShip, description: e.target.value })}
-              />
-            </Form.Group>
-            <Button variant="primary" onClick={handleAddShip}>
-              Add
-            </Button>
-          </Form>
+      <Container fluid className="d-flex justify-content-center align-items-center" style={{ minHeight: "100vh" }}>
+        <div className="d-flex" style={{ width: "90%" }}>
+          <div style={{ flex: "1", marginRight: "50px" }}>
+            <h2 className="mb-4">{ferriesListTitle}</h2>
+            <ListGroup>
+              {ships.map((ship, index) => (
+                <ListGroup.Item key={index} className="d-flex justify-content-between align-items-center">
+                  {ship.name}
+                  <Button variant="danger" onClick={() => handleRemoveShip(ship.name)}>
+                    {removeButtonText}
+                  </Button>
+                </ListGroup.Item>
+              ))}
+            </ListGroup>
+          </div>
+          <div style={{ flex: "1" }}>
+            <h2 className="mb-4">{addShipTitle}</h2>
+            <Form>
+              <Form.Group controlId="shipName">
+                <Form.Control
+                  type="text"
+                  placeholder={namePlaceholderText}
+                  value={newShip.name}
+                  onChange={(e) => setNewShip({ ...newShip, name: e.target.value })}
+                />
+              </Form.Group>
+              <Form.Group controlId="shipImage">
+                <Form.Control
+                  type="text"
+                  placeholder={imagePlaceholderText}
+                  value={newShip.image}
+                  onChange={(e) => setNewShip({ ...newShip, image: e.target.value })}
+                />
+              </Form.Group>
+              <Form.Group controlId="shipDescription">
+                <Form.Control
+                  type="text"
+                  placeholder={descriptionPlaceholderText}
+                  value={newShip.description}
+                  onChange={(e) => setNewShip({ ...newShip, description: e.target.value })}
+                />
+              </Form.Group>
+              <Button variant="primary" onClick={handleAddShip}>
+                {addButtonText}
+              </Button>
+            </Form>
+          </div>
         </div>
-        <div>
-          <h3>Ships List</h3>
-          <ListGroup>
-            {ships.map((ship, index) => (
-              <ListGroup.Item key={index} className="d-flex justify-content-between align-items-center">
-                {ship.name}
-                <Button variant="danger" onClick={() => handleRemoveShip(ship.name)}>
-                  Remove
-                </Button>
-              </ListGroup.Item>
-            ))}
-          </ListGroup>
-        </div>
-      </div>
-    </Container>
+      </Container>
     </AdminLayout>
   );
 };

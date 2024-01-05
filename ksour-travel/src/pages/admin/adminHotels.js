@@ -6,6 +6,8 @@ import Form from "react-bootstrap/Form";
 import ListGroup from "react-bootstrap/ListGroup";
 import Container from "react-bootstrap/Container";
 import axios from "axios";
+import AdminLayout from "./adminLayout/adminLayout";
+import "./admincss/adminHotels.scss"; // Import your custom CSS for styling
 
 const AdminHotels = () => {
   const [newHotel, setNewHotel] = useState({
@@ -40,11 +42,26 @@ const AdminHotels = () => {
   };
 
   return (
-    <Container className="d-flex justify-content-center align-items-center" style={{ minHeight: "100vh", width: "90%" }}>
-      <div>
-        <h2 className="mb-4">Hotels List</h2>
-        <div className="mb-4">
-          <h3>Add Hotel</h3>
+    <AdminLayout>
+      <Container fluid className="admin-hotels-container">
+        <div className="left-section">
+          <h2 className="mb-4">Hotels List</h2>
+          <ListGroup>
+            {hotels.map((hotel, index) => (
+              <ListGroup.Item key={index} className="d-flex justify-content-between align-items-center">
+                <div style={{ flex: 1 }}>
+                  <h5>{hotel.name}</h5>
+                  <p>{hotel.description}</p>
+                </div>
+                <Button variant="danger" onClick={() => handleRemoveHotel(hotel.name)}>
+                  Remove
+                </Button>
+              </ListGroup.Item>
+            ))}
+          </ListGroup>
+        </div>
+        <div className="right-section">
+          <h2 className="mb-4">Add Hotel</h2>
           <Form>
             <Form.Group controlId="hotelName">
               <Form.Control
@@ -70,29 +87,31 @@ const AdminHotels = () => {
                 onChange={(e) => setNewHotel({ ...newHotel, description: e.target.value })}
               />
             </Form.Group>
+            <Form.Group controlId="hotelPrix">
+              <Form.Control
+                type="number"
+                placeholder="Prix"
+                value={newHotel.prix}
+                onChange={(e) => setNewHotel({ ...newHotel, prix: e.target.value })}
+              />
+            </Form.Group>
+            <Form.Group controlId="hotelLocalisation">
+              <Form.Control
+                type="text"
+                placeholder="Localisation"
+                value={newHotel.localisation}
+                onChange={(e) => setNewHotel({ ...newHotel, localisation: e.target.value })}
+              />
+            </Form.Group>
             <Button variant="primary" onClick={handleAddHotel}>
               Add
             </Button>
           </Form>
         </div>
-        <div>
-          <h3>Hotels List</h3>
-          <ListGroup>
-            {hotels.map((hotel, index) => (
-              <ListGroup.Item key={index} className="d-flex justify-content-between align-items-center">
-                {hotel.name}
-                <Button variant="danger" onClick={() => handleRemoveHotel(hotel.name)}>
-                  Remove
-                </Button>
-              </ListGroup.Item>
-            ))}
-          </ListGroup>
-        </div>
-      </div>
-    </Container>
+      </Container>
+    </AdminLayout>
   );
+  
 };
 
 export default AdminHotels;
-
-
