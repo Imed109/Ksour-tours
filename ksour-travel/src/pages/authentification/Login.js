@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Login = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -12,10 +15,26 @@ const Login = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Login Data:", formData);
-    setFormData({ email: "", password: "" });
+    try {
+      const res = await axios.post("http://localhost:3001/user/login", formData);
+      
+      // Assuming the response contains token and username
+      const { token, user } = res.data;
+
+      // Store token and username in local storage
+      localStorage.setItem("token", token);
+      localStorage.setItem("user", user.fullName);
+      // console.log(res.data);
+      // console.log(token);
+     
+
+      // Redirect to home page after successful login
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
