@@ -62,7 +62,7 @@ const Register = () => {
                 placeholder="Entrez votre nom complet"
                 name="fullName"
                 value={formData.fullName}
-                onChange={handleChange}
+                // onChange={handleChange}
               />
             </Form.Group>
 
@@ -73,7 +73,7 @@ const Register = () => {
                 placeholder="Entrez votre email"
                 name="email"
                 value={formData.email}
-                onChange={handleChange}
+                // onChange={handleChange}
               />
             </Form.Group>
 
@@ -84,7 +84,7 @@ const Register = () => {
                 placeholder="Entrez votre âge"
                 name="age"
                 value={formData.age}
-                onChange={handleChange}
+                // onChange={handleChange}
               />
             </Form.Group>
 
@@ -95,7 +95,7 @@ const Register = () => {
                 placeholder="Entrez votre numéro de téléphone"
                 name="phoneNumber"
                 value={formData.phoneNumber}
-                onChange={handleChange}
+                // onChange={handleChange}
               />
             </Form.Group>
 
@@ -106,7 +106,7 @@ const Register = () => {
                 placeholder="Créez votre mot de passe"
                 name="password"
                 value={formData.password}
-                onChange={handleChange}
+                // onChange={handleChange}
               />
             </Form.Group>
 
@@ -117,7 +117,7 @@ const Register = () => {
                 placeholder="Confirmez votre mot de passe"
                 name="confirmPassword"
                 value={formData.confirmPassword}
-                onChange={handleChange}
+                // onChange={handleChange}
               />
             </Form.Group>
 
