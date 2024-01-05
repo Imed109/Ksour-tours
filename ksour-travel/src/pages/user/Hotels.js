@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchHotels } from "../../JS/hotelsSlice";
 import UserLayout from "./useLayout/userlayout";
 import "./css/hotels.scss";
-
+import HotelsHero from "./heros/HotelsHero";
 const CustomHotelCard = ({ hotel }) => {
   return (
     <div className="hotel-card">
@@ -18,8 +18,8 @@ const CustomHotelCard = ({ hotel }) => {
         <div className="hotel-description">
           <h3>{hotel.name}</h3>
           <p>{hotel.localisation}</p> {/* Display localization */}
-          <p>{hotel.description}</p>
-          <p>Prix: {hotel.prix}</p> {/* Display price */}
+          <p className="note" >{hotel.description}</p>
+          <p>Prix: {hotel.prix} TND</p> {/* Display price */}
         </div>
       </div>
     </div>
@@ -35,6 +35,7 @@ const Hotels = () => {
 
   return (
     <UserLayout>
+      <HotelsHero/>
       <div className="hotels-container">
         <h1>Les Hôtels Recommandés</h1>
         <div className="hotels-list">

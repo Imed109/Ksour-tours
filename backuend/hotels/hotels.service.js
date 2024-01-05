@@ -9,9 +9,9 @@ const getAll = async () => {
   }
 };
 
-const add = async (name, image, description) => {
+const add = async (name, image, description,prix,localisation) => {
   try {
-    const newHotel = new Hotel({ name, image, description });
+    const newHotel = new Hotel({ name, image, description,prix,localisation });
     await newHotel.save();
     return newHotel;
   } catch (error) {

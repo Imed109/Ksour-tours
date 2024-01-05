@@ -34,6 +34,10 @@ const NavBar = () => {
           <ul className="nav-links">
             <li><Link to="/">Home</Link></li>
             <li><Link to="/airlines">Airlines</Link></li>
+            <li><Link to="/omra">Omra</Link></li>
+            <li><Link to="/ferries">Ferries</Link></li>
+            <li><Link to="/hotels">Hotels</Link></li>
+
             {/* ... other links */}
             <li><Link to="/contact">Contact</Link></li>
             {user ? (

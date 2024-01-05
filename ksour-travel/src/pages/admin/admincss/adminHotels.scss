@@ -1,16 +1,29 @@
-
 /* adminHotels.scss */
 .admin-hotels-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px; /* Add space between sections */
+}
+
+.left-section {
+  width: 48%; /* Adjust width as needed */
+  .admin-hotel-card {
+    margin-bottom: 8px; /* Increase space between hotel cards */
+    .hotel-description,
+    .hotel-localisation {
+      font-size: 12px; /* Reduce font size of description and localisation */
+    }
+    .hotel-name {
+      font-size: 25px; /* Reduce font size of hotel name */
+    }
+    .remove-button {
+      margin-right: auto; /* Push the remove button to the right */
+    }
   }
-  
-  .left-section {
-    width: 50%; /* Adjust width as needed */
-  }
-  
-  .right-section {
-    width: 50%; /* Adjust width as needed */
-  }
-  
+}
+
+.right-section {
+  width: 48%; /* Adjust width as needed */
+
+ 
+}

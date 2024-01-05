@@ -14,6 +14,8 @@ const AdminHotels = () => {
     name: "",
     image: "",
     description: "",
+    prix: "",
+    localisation: "",
   });
   const hotels = useSelector((state) => state.hotels.list);
   const dispatch = useDispatch();
@@ -25,7 +27,13 @@ const AdminHotels = () => {
   const handleAddHotel = async () => {
     try {
       await axios.post("http://localhost:3001/hotels", newHotel);
-      setNewHotel({ name: "", image: "", description: "" });
+      setNewHotel({
+        name: "",
+        image: "",
+        description: "",
+        prix: "",
+        localisation: "",
+      });
       dispatch(fetchHotels());
     } catch (error) {
       console.error("Error adding hotel:", error);
@@ -45,46 +53,60 @@ const AdminHotels = () => {
     <AdminLayout>
       <Container fluid className="admin-hotels-container">
         <div className="left-section">
-          <h2 className="mb-4">Hotels List</h2>
+          <h2 className="mb-4">Liste des Hôtels</h2>
           <ListGroup>
             {hotels.map((hotel, index) => (
-              <ListGroup.Item key={index} className="d-flex justify-content-between align-items-center">
-                <div style={{ flex: 1 }}>
-                  <h5>{hotel.name}</h5>
-                  <p>{hotel.description}</p>
+              <ListGroup.Item
+                key={index}
+                className="admin-hotel-card" /* Updated class name */
+              >
+                <div>
+                  <h5 className="hotel-name">{hotel.name}</h5>
+                  <p className="hotel-localisation">{hotel.localisation}</p>
+                  <p className="hotel-description">{hotel.description}</p>
                 </div>
-                <Button variant="danger" onClick={() => handleRemoveHotel(hotel.name)}>
-                  Remove
+                <Button className="remove-button"
+                  variant="danger"
+                  onClick={() => handleRemoveHotel(hotel.name)}
+                >
+                  Supprimer
                 </Button>
               </ListGroup.Item>
             ))}
           </ListGroup>
         </div>
         <div className="right-section">
-          <h2 className="mb-4">Add Hotel</h2>
+          <h2 className="mb-4">Ajouter un Hôtel</h2>
           <Form>
             <Form.Group controlId="hotelName">
               <Form.Control
                 type="text"
-                placeholder="Name"
+                placeholder="Nom"
                 value={newHotel.name}
-                onChange={(e) => setNewHotel({ ...newHotel, name: e.target.value })}
+                onChange={(e) =>
+                  setNewHotel({ ...newHotel, name: e.target.value })
+                }
               />
             </Form.Group>
             <Form.Group controlId="hotelImage">
               <Form.Control
                 type="text"
-                placeholder="Image URL"
+                placeholder="URL de l'image"
                 value={newHotel.image}
-                onChange={(e) => setNewHotel({ ...newHotel, image: e.target.value })}
+                onChange={(e) =>
+                  setNewHotel({ ...newHotel, image: e.target.value })
+                }
               />
             </Form.Group>
             <Form.Group controlId="hotelDescription">
               <Form.Control
-                type="text"
+                as="textarea"
+                rows={3}
                 placeholder="Description"
                 value={newHotel.description}
-                onChange={(e) => setNewHotel({ ...newHotel, description: e.target.value })}
+                onChange={(e) =>
+                  setNewHotel({ ...newHotel, description: e.target.value })
+                }
               />
             </Form.Group>
             <Form.Group controlId="hotelPrix">
@@ -92,7 +114,9 @@ const AdminHotels = () => {
                 type="number"
                 placeholder="Prix"
                 value={newHotel.prix}
-                onChange={(e) => setNewHotel({ ...newHotel, prix: e.target.value })}
+                onChange={(e) =>
+                  setNewHotel({ ...newHotel, prix: e.target.value })
+                }
               />
             </Form.Group>
             <Form.Group controlId="hotelLocalisation">
@@ -100,18 +124,20 @@ const AdminHotels = () => {
                 type="text"
                 placeholder="Localisation"
                 value={newHotel.localisation}
-                onChange={(e) => setNewHotel({ ...newHotel, localisation: e.target.value })}
+                onChange={(e) =>
+                  setNewHotel({ ...newHotel, localisation: e.target.value })
+                }
               />
             </Form.Group>
             <Button variant="primary" onClick={handleAddHotel}>
-              Add
+              Ajouter
             </Button>
           </Form>
         </div>
       </Container>
     </AdminLayout>
   );
-  
 };
 
 export default AdminHotels;
+

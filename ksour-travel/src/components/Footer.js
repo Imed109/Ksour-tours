@@ -1,3 +1,5 @@
+// Footer.js
+import "./css/Footer.css";
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import {
@@ -9,9 +11,10 @@ import {
   Instagram,
 } from "react-bootstrap-icons";
 
+
 const Footer = () => {
   return (
-    <div style={{ background: "#333", color: "#fff", padding: "20px 0" }}>
+    <div className="footer-container">
       <Container>
         <Row>
           <Col xs={12} md={4}>
@@ -28,8 +31,8 @@ const Footer = () => {
             </p>
           </Col>
           <Col xs={12} md={4}>
-            {/* Your content for the middle column */}
-            {/* You can add information about services, about us, testimonials, etc. */}
+            {/* Votre contenu pour la colonne du milieu */}
+            {/* Vous pouvez ajouter des informations sur les services, à propos de nous, des témoignages, etc. */}
           </Col>
           <Col xs={12} md={4}>
             <h5>Connectez-vous avec nous</h5>
@@ -52,12 +55,12 @@ const Footer = () => {
               >
                 <Instagram style={{ marginRight: "10px" }} />
               </a>
-              {/* Add more social media icons with their respective anchor tags */}
+              {/* Ajoutez plus d'icônes de médias sociaux avec leurs balises d'ancre respectives */}
             </div>
           </Col>
         </Row>
       </Container>
-      <div style={{ textAlign: "center", marginTop: "20px" }}>
+      <div className="footer-bottom">
         <p>
           &copy; {new Date().getFullYear()} Ksour Tour. Tous droits réservés.
         </p>
@@ -67,3 +70,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

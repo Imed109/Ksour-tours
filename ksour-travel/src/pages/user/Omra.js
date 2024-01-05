@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchOmra } from "../../JS/omraSlice";
 import { Link } from "react-router-dom";
 import UserLayout from "./useLayout/userlayout";
-
+import OmraHero from "./heros/OmraHero";
 const Omra = () => {
   const dispatch = useDispatch();
   const offers = useSelector((state) => state.omra.offers);
@@ -15,6 +15,7 @@ const Omra = () => {
 
   return (
     <UserLayout>
+      <OmraHero/>
     <div>
       <h2>Omra Offers</h2>
       <div className="d-flex flex-wrap">

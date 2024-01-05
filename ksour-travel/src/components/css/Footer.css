@@ -1,0 +1,26 @@
+/* Footer.css */
+
+.footer-container {
+    background: #50968c; /* Couleur de fond plus foncée */
+    color: #fff;
+    padding: 20px 0;
+  }
+  
+  .footer-container h5 {
+    color: #fff; /* Couleur du texte pour les titres h5 */
+  }
+  
+  .footer-container p {
+    color: #fff; /* Couleur du texte pour les paragraphes */
+  }
+  
+  .footer-container a {
+    color: #fff; /* Couleur du texte pour les liens */
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    color: #fff; /* Couleur du texte pour le bas du pied de page */
+  }
+  

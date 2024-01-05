@@ -10,9 +10,9 @@ const getAllHotels = async (req, res) => {
 };
 
 const addHotel = async (req, res) => {
-  const { name, image, description } = req.body;
+  const { name, image, description,prix, localisation } = req.body;
   try {
-    const newHotel = await hotelsService.add(name, image, description);
+    const newHotel = await hotelsService.add(name, image, description, prix ,localisation);
     res.status(201).json(newHotel);
   } catch (error) {
     res.status(500).json({ error: error.message });

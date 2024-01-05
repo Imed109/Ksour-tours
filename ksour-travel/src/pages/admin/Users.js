@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUsers } from "../../JS/usersSlice";
-import { ListGroup, Alert } from "react-bootstrap";
+import { Table, Alert } from "react-bootstrap";
 import AdminLayout from "./adminLayout/adminLayout";
 
 const Users = () => {
@@ -13,38 +13,31 @@ const Users = () => {
     dispatch(fetchUsers());
   }, [dispatch]);
 
-
-
   return (
     <AdminLayout>
-
-    <div>
-      <h2>Liste des Utilisateurs</h2>
-      {error && <Alert variant="danger">{error}</Alert>}
-      <ListGroup>
-        {users.map((user, index) => (
-          <ListGroup.Item
-            key={index}
-            className="d-flex justify-content-between align-items-center"
-          >
-            <div>
-              <p>
-                <strong>Nom:</strong> {user.fullName}
-              </p>
-              <p>
-                <strong>Email:</strong> {user.email}
-              </p>
-              <p>
-                <strong>Téléphone:</strong> {user.phone}
-              </p>
-            </div>
-            
-          </ListGroup.Item>
-        ))}
-      </ListGroup>
-    </div>
+      <div>
+        <h2>Liste des Utilisateurs</h2>
+        {error && <Alert variant="danger">{error}</Alert>}
+        <Table striped bordered hover responsive>
+          <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Email</th>
+              <th>Téléphone</th>
+            </tr>
+          </thead>
+          <tbody>
+            {users.map((user, index) => (
+              <tr key={index}>
+                <td>{user.fullName}</td>
+                <td>{user.email}</td>
+                <td>{user.phone}</td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      </div>
     </AdminLayout>
-
   );
 };
 
