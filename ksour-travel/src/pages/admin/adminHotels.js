@@ -58,7 +58,7 @@ const AdminHotels = () => {
             {hotels.map((hotel, index) => (
               <ListGroup.Item
                 key={index}
-                className="admin-hotel-card" /* Updated class name */
+                className="admin-hotel-card"
               >
                 <div>
                   <h5 className="hotel-name">{hotel.name}</h5>
@@ -78,7 +78,7 @@ const AdminHotels = () => {
         <div className="right-section">
           <h2 className="mb-4">Ajouter un Hôtel</h2>
           <Form>
-            <Form.Group controlId="hotelName">
+            <Form.Group controlId="hotelName" className="mb-3">
               <Form.Control
                 type="text"
                 placeholder="Nom"
@@ -88,7 +88,7 @@ const AdminHotels = () => {
                 }
               />
             </Form.Group>
-            <Form.Group controlId="hotelImage">
+            <Form.Group controlId="hotelImage" className="mb-3">
               <Form.Control
                 type="text"
                 placeholder="URL de l'image"
@@ -98,7 +98,7 @@ const AdminHotels = () => {
                 }
               />
             </Form.Group>
-            <Form.Group controlId="hotelDescription">
+            <Form.Group controlId="hotelDescription" className="mb-3">
               <Form.Control
                 as="textarea"
                 rows={3}
@@ -109,7 +109,7 @@ const AdminHotels = () => {
                 }
               />
             </Form.Group>
-            <Form.Group controlId="hotelPrix">
+            <Form.Group controlId="hotelPrix" className="mb-3">
               <Form.Control
                 type="number"
                 placeholder="Prix"
@@ -119,7 +119,7 @@ const AdminHotels = () => {
                 }
               />
             </Form.Group>
-            <Form.Group controlId="hotelLocalisation">
+            <Form.Group controlId="hotelLocalisation" className="mb-3">
               <Form.Control
                 type="text"
                 placeholder="Localisation"
@@ -129,7 +129,7 @@ const AdminHotels = () => {
                 }
               />
             </Form.Group>
-            <Button variant="primary" onClick={handleAddHotel}>
+            <Button variant="warning" onClick={handleAddHotel}>
               Ajouter
             </Button>
           </Form>
@@ -140,4 +140,3 @@ const AdminHotels = () => {
 };
 
 export default AdminHotels;
-

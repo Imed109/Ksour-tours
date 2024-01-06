@@ -5,7 +5,7 @@ import Hero from "../../components/Hero";
 import NavBar from "../../components/NavBar";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-
+import Services from "../../components/Services"
 const Home = () => {
   return (
     
@@ -13,6 +13,7 @@ const Home = () => {
       <Header/>
       <NavBar/>
      <Hero/>
+     <Services/>
       <section className="trips-section">
         <Container>
           <h2>Our Organised Trips</h2>

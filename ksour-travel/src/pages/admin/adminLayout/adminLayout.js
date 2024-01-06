@@ -1,11 +1,9 @@
 import React from 'react';
-import Header from '../../../components/Header';
-import Footer from '../../../components/Footer';
 import Sidebar from '../../../components/SideBar';
 const AdminLayout = ({ children }) => {
     return (
       <div>
-        <Header />
+        
         <div style={{ display: 'flex'}}>
 
           <Sidebar />
@@ -13,7 +11,6 @@ const AdminLayout = ({ children }) => {
             {children}
           </div>
         </div>
-        <Footer />
       </div>
     );
   };

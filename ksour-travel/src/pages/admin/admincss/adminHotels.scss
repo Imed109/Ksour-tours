@@ -4,6 +4,13 @@
   justify-content: space-between;
   gap: 20px; /* Add space between sections */
 }
+/* Add your existing styles here */
+
+.right-section {
+  .mb-3 {
+    margin-bottom: 15px; /* You can adjust this value as needed */
+  }
+}
 
 .left-section {
   width: 48%; /* Adjust width as needed */

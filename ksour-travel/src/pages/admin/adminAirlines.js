@@ -5,6 +5,8 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import ListGroup from "react-bootstrap/ListGroup";
 import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import axios from "axios";
 import AdminLayout from "./adminLayout/adminLayout";
 
@@ -38,37 +40,13 @@ const AdminAirlines = () => {
 
   return (
     <AdminLayout>
-      <div>
-        <Container className="d-flex flex-column align-items-center" style={{ minHeight: "70vh", width: "90%" }}>
-          <h2 className="mb-4">Airlines List</h2>
-          <div className="mb-4" style={{ width: "70%", margin: "0 auto" }}>
-            <div className="mb-4">
-              <h3>Add Company</h3>
-              <Form>
-                <Form.Group controlId="companyName">
-                  <Form.Control
-                    type="text"
-                    placeholder="Name"
-                    value={newCompany.name}
-                    onChange={(e) => setNewCompany({ ...newCompany, name: e.target.value })}
-                  />
-                </Form.Group>
-                <Form.Group controlId="companyImage">
-                  <Form.Control
-                    type="text"
-                    placeholder="Image URL"
-                    value={newCompany.image}
-                    onChange={(e) => setNewCompany({ ...newCompany, image: e.target.value })}
-                  />
-                </Form.Group>
-                <Button variant="primary" onClick={handleAddCompany}>
-                  Add
-                </Button>
-              </Form>
-            </div>
-            <div style={{ width: "100%", margin: "0 auto" }}>
-              <h3>Companies List</h3>
-              <ListGroup style={{ width: "70%", margin: "0 auto" }}>
+      <Container className="d-flex flex-column align-items-center" style={{ minHeight: "70vh", width: "90%" }}>
+        <h2 className="mb-4">Airlines Management</h2>
+        <Row className="mb-4">
+          <Col md={6}>
+            <div style={{ width: "100%" }}>
+              <h5>Liste Companies</h5>
+              <ListGroup>
                 {companies.map((company, index) => (
                   <ListGroup.Item
                     key={index}
@@ -77,15 +55,41 @@ const AdminAirlines = () => {
                   >
                     <span>{company.name}</span>
                     <Button variant="danger" onClick={() => handleRemoveCompany(company.name)}>
-                      Remove
+                      effacer
                     </Button>
                   </ListGroup.Item>
                 ))}
               </ListGroup>
             </div>
-          </div>
-        </Container>
-      </div>
+          </Col>
+          <Col md={6}>
+            <div style={{ width: "100%" }}>
+              <h5>Ajouter Airlines</h5>
+              <Form>
+                <Form.Group controlId="companyName" className="mb-3">
+                  <Form.Control
+                    type="text"
+                    placeholder="Name"
+                    value={newCompany.name}
+                    onChange={(e) => setNewCompany({ ...newCompany, name: e.target.value })}
+                  />
+                </Form.Group>
+                <Form.Group controlId="companyImage" className="mb-3">
+                  <Form.Control
+                    type="text"
+                    placeholder="Image URL"
+                    value={newCompany.image}
+                    onChange={(e) => setNewCompany({ ...newCompany, image: e.target.value })}
+                  />
+                </Form.Group>
+                <Button variant="warning" onClick={handleAddCompany}>
+                  Ajouter
+                </Button>
+              </Form>
+            </div>
+          </Col>
+        </Row>
+      </Container>
     </AdminLayout>
   );
 };

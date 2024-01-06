@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import service1 from "../assets/service1.png";
-import service2 from "../assets/service2.png";
-import service3 from "../assets/service3.png";
-import service4 from "../assets/service4.png";
+import service1 from "../assests/service1.png";
+import service2 from "../assests/service2.png";
+import service3 from "../assests/service3.png";
+import service4 from "../assests/service4.png";
 
 export default function Services() {
   const data = [
@@ -50,7 +50,7 @@ export default function Services() {
 }
 
 const Section = styled.section`
-  padding: 5rem 0;
+  padding: 8rem 0;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;

@@ -1,38 +1,43 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .sidebar {
-    height: 100%;
-    width: 250px; /* Adjust width as needed */
-   
-    top: 0;
-    left: 0;
-    background-color: #f8f9fa; /* Sidebar background color */
-    padding-top: 20px;
-  }
-  
-  .sidebar h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .sidebar-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .sidebar-list li {
-    padding: 10px 0;
-    text-align: center;
-  }
-  
-  .sidebar-list li a {
-    text-decoration: none;
-    color: #333; /* Link color */
-    display: block;
-    transition: 0.3s;
-  }
-  
-  .sidebar-list li a:hover {
-    background-color: #e9ecef; /* Hover background color */
-    color: #000; /* Hover text color */
-  }
-  
+  height: 100vh; /* La barre latérale occupe toute la hauteur de la vue */
+  width: 250px; /* Ajustez la largeur selon vos besoins */
+  top: 0;
+  left: 0;
+  background-color: #95d1bc
+  ; /* Couleur de fond de la barre latérale */
+  padding-top: 20px;
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sidebar-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-list li {
+  padding: 10px 0;
+  text-align: center;
+}
+
+.sidebar-list li a {
+  text-decoration: none;
+  color: #333; /* Couleur du lien */
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar-list li a:hover {
+  background-color: #e9ecef; /* Couleur de fond au survol */
+  color: #000; /* Couleur du texte au survol */
+}

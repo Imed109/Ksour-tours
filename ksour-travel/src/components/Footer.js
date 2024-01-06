@@ -35,7 +35,7 @@ const Footer = () => {
             {/* Vous pouvez ajouter des informations sur les services, à propos de nous, des témoignages, etc. */}
           </Col>
           <Col xs={12} md={4}>
-            <h5>Connectez-vous avec nous</h5>
+            
             <p>Suivez-nous sur les réseaux sociaux :</p>
             <div>
               <a

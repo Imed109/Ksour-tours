@@ -64,7 +64,7 @@ const AdminFerries = () => {
           <div style={{ flex: "1" }}>
             <h2 className="mb-4">{addShipTitle}</h2>
             <Form>
-              <Form.Group controlId="shipName">
+              <Form.Group controlId="shipName" className="mb-3">
                 <Form.Control
                   type="text"
                   placeholder={namePlaceholderText}
@@ -72,7 +72,7 @@ const AdminFerries = () => {
                   onChange={(e) => setNewShip({ ...newShip, name: e.target.value })}
                 />
               </Form.Group>
-              <Form.Group controlId="shipImage">
+              <Form.Group controlId="shipImage" className="mb-3">
                 <Form.Control
                   type="text"
                   placeholder={imagePlaceholderText}
@@ -80,7 +80,7 @@ const AdminFerries = () => {
                   onChange={(e) => setNewShip({ ...newShip, image: e.target.value })}
                 />
               </Form.Group>
-              <Form.Group controlId="shipDescription">
+              <Form.Group controlId="shipDescription" className="mb-3">
                 <Form.Control
                   type="text"
                   placeholder={descriptionPlaceholderText}
@@ -88,7 +88,7 @@ const AdminFerries = () => {
                   onChange={(e) => setNewShip({ ...newShip, description: e.target.value })}
                 />
               </Form.Group>
-              <Button variant="primary" onClick={handleAddShip}>
+              <Button variant="warning" onClick={handleAddShip}>
                 {addButtonText}
               </Button>
             </Form>
@@ -100,4 +100,3 @@ const AdminFerries = () => {
 };
 
 export default AdminFerries;
-
