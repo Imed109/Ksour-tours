@@ -5,7 +5,7 @@ import axios from "axios";
 import "./authcss/login.scss"; // Import your SCSS file for styling
 import loginImage from "../../assests/hero2.jpg";
 
-const Login = () => {
+const AdminLogin = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
@@ -20,17 +20,14 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:3001/user/login", formData);
+      const res = await axios.post("http://localhost:3001/admin/login", formData);
       const { token, user } = res.data;
-
-    
 
       localStorage.setItem("token", token);
       localStorage.setItem("user", user.fullName);
       localStorage.setItem("token", token);
       localStorage.setItem("userId", user._id);
-      localStorage.setItem("role", "user");
-
+      localStorage.setItem("role", "admin");
 
       navigate("/");
     } catch (error) {
@@ -88,4 +85,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default AdminLogin;
