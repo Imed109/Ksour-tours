@@ -5,20 +5,28 @@ import ksour from "../assests/ksour.png";
 
 const NavBar = () => {
   const [user, setUser] = useState(null);
+  const [isAdmin, setIsAdmin] = useState(false); // Assuming you have user role stored
 
   useEffect(() => {
-    // Check for the user in local storage
+    // Check for the user and their role in local storage
     const storedUser = localStorage.getItem("user");
+    const storedRole = localStorage.getItem("role");
     if (storedUser) {
       setUser(storedUser);
+    }
+    if (storedRole === "admin") {
+      setIsAdmin(true);
     }
   }, []);
 
   const handleLogout = () => {
-    // Remove the user from local storage
+    // Remove the user and role from local storage
     localStorage.removeItem("user");
     localStorage.removeItem("token");
+    localStorage.removeItem("userId");
+    localStorage.removeItem("role");
     setUser(null); // Update state to reflect logged out status
+    setIsAdmin(false); // Update admin status
   };
 
   return (
@@ -37,18 +45,19 @@ const NavBar = () => {
             <li><Link to="/omra">Omra</Link></li>
             <li><Link to="/ferries">Ferries</Link></li>
             <li><Link to="/hotels">Hotels</Link></li>
-
-            {/* ... other links */}
             <li><Link to="/contact">Contact</Link></li>
             {user ? (
               <>
-                <li><button onClick={handleLogout}>Log out</button></li>
-                <li><Link to="/profile">Profile</Link></li>
-                <li> {user}</li>
+                {isAdmin ? (
+                  <li><Link to="/admin/dashboard">Admin</Link></li>
+                ) : (
+                  <li><Link to="/profile">{user}</Link></li>
+                )}
+                <li><button onClick={handleLogout}>Se deconnecter</button></li>
               </>
             ) : (
               <>
-                <li><Link to="/login" >Se connecter</Link></li>
+                <li><Link to="/login">Se connecter</Link></li>
               </>
             )}
           </ul>

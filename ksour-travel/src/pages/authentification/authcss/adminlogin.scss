@@ -1,0 +1,64 @@
+/* adminlogin.scss */
+
+/* Style for the entire admin login page container */
+.admin-login-page {
+    height: 100vh;
+    display: flex;
+  }
+  
+  /* Style for the admin login image column */
+  .admin-image-column {
+    margin: 0;
+    padding: 0;
+    flex: 1; /* Adjust the width of the column */
+  }
+  
+  /* Style for the admin login column */
+  .admin-login-column {
+    margin: 0;
+    padding: 0;
+    flex: 1; /* Adjust the width of the column */
+  }
+  
+  /* Style for the admin login image container */
+  .admin-image-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../../assests/adminlogin.jpg'); /* Replace 'adminlogin.jpg' with your image path */
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the image */
+    margin: 0; /* Remove any default margin */
+    padding: 0; /* Remove any default padding */
+  }
+  
+  .admin-image-container img {
+    max-width: 100%; /* Limit the image to the container's width */
+    max-height: 100%; /* Limit the image to the container's height */
+    height: auto; /* Maintain aspect ratio */
+    width: auto; /* Maintain aspect ratio */
+  }
+  
+  /* Style for the admin login container */
+  .admin-login-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center; /* Align login content to the left within admin login container */
+    align-items: center;
+    flex-direction: column; /* Align content vertically in the center */
+    background-color: #f9f9f9;
+    border-left: 2px solid #ccc;
+    margin: 0; /* Remove any default margin */
+    padding: 0; /* Remove any default padding */
+  }
+  
+  /* Style for the admin login content */
+  .admin-login-content {
+    max-width: 350px; /* Adjust the width of the content */
+    padding: 20px;
+    text-align: left;
+  }
+  
+  /* Other styles for your admin login form, headings, etc. */
+  

@@ -1,0 +1,64 @@
+/* register.scss */
+
+/* Style for the entire registration page container */
+.registration-page {
+    height: 100vh;
+    display: flex;
+  }
+  
+  /* Style for the image column */
+  .image-column {
+    margin: 0;
+    padding: 0;
+    flex: 1; /* Adjust the width of the column */
+  }
+  
+  /* Style for the registration column */
+  .registration-column {
+    margin: 0;
+    padding: 0;
+    flex: 1; /* Adjust the width of the column */
+  }
+  
+  /* Style for the image container */
+  .image-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../../assests/hero4.jpg'); /* Replace 'hero4.jpg' with your image path */
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the image */
+    margin: 0; /* Remove any default margin */
+    padding: 0; /* Remove any default padding */
+  }
+  
+  .image-container img {
+    max-width: 100%; /* Limit the image to the container's width */
+    max-height: 100vh; /* Limit the image to the container's height */
+    height: auto; /* Maintain aspect ratio */
+    width: auto; /* Maintain aspect ratio */
+  }
+  
+  /* Style for the registration container */
+  .registration-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center; /* Align registration content to the left within registration-container */
+    align-items: center;
+    flex-direction: column; /* Align content vertically in the center */
+    background-color: #f9f9f9;
+    border-left: 2px solid #ccc;
+    margin: 0; /* Remove any default margin */
+    padding: 0; /* Remove any default padding */
+  }
+  
+  /* Style for the registration content */
+  .registration-content {
+    max-width: 350px; /* Adjust the width of the content */
+    padding: 20px;
+    text-align: left;
+  }
+  
+  /* Other styles for your registration form, headings, etc. */
+  

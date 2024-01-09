@@ -44,7 +44,7 @@ const Hotels = () => {
           ))}
         </div>
         <div className="reservation-button">
-          <Button as={Link} to="/reservation" variant="primary">
+          <Button as={Link} to="/formulaire" variant="primary">
             Reservation
           </Button>
         </div>

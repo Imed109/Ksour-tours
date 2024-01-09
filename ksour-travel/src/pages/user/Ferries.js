@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchShips } from "../../JS/ferriesSlice"; // Replace with the correct path to ferriesSlice
 import UserLayout from "./useLayout/userlayout";
 import "./css/ferries.scss"; // Import your SCSS file
+import FerriesHero from "./heros/FerriesHero";
 
 // Ship card component
 const CustomShipCard = ({ ship }) => {
@@ -31,6 +32,7 @@ const Ferries = () => {
 
   return (
     <UserLayout>
+      <FerriesHero/>
       <div className="ferries-component">
         <div className="ships-list">
           {ships.map((ship, index) => (

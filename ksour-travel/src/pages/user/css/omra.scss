@@ -1,0 +1,64 @@
+/* omra.scss */
+
+.omra-container {
+    text-align: center;
+    padding: 20px;
+  
+    h1 {
+      margin-bottom: 20px;
+    }
+  
+    .omra-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 0 20px; /* Padding inside the list */
+      margin: 0 auto; /* Center the list horizontally */
+      max-width: 1200px; /* Set a maximum width for the list */
+      
+      .omra-card {
+        width: calc(33.33% - 20px);
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        transition: transform 0.3s ease-in-out;
+        overflow: hidden;
+  
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+  
+        .omra-info {
+          img.omra-image {
+            width: 100%;
+            height: 75%;
+            object-fit: cover;
+            border-radius: 5px;
+          }
+  
+          .omra-description {
+            padding: 2px;
+  
+            h3 {
+              text-align: left;
+              margin-left: 8px;
+            }
+            .note {
+              color: green;
+            }
+            p {
+              text-align: left;
+              margin-left: 12px;
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  
+    .reservation-button {
+      margin-top: 20px;
+    }
+  }
+  

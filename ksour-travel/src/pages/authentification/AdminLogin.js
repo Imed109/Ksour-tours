@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import "./authcss/login.scss"; // Import your SCSS file for styling
-import loginImage from "../../assests/hero2.jpg";
+import "./authcss/adminlogin.scss"; // Import your SCSS file for styling
+import loginImage from "../../assests/adminlogin.jpg";
 
 const AdminLogin = () => {
   const navigate = useNavigate();
@@ -20,13 +20,16 @@ const AdminLogin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:3001/admin/login", formData);
-      const { token, user } = res.data;
-
+      const res = await axios.post(
+        "http://localhost:3001/admin/login",
+        formData
+      );
+      const { token, admin } = res.data;
+      console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", admin);
       localStorage.setItem("token", token);
-      localStorage.setItem("user", user.fullName);
+      localStorage.setItem("user", admin.name);
       localStorage.setItem("token", token);
-      localStorage.setItem("userId", user._id);
+      localStorage.setItem("userId", admin._id);
       localStorage.setItem("role", "admin");
 
       navigate("/");
@@ -36,17 +39,17 @@ const AdminLogin = () => {
   };
 
   return (
-    <div className="login-page">
+    <div className="admin-login-page">
       <Container fluid>
         <Row>
-          <Col md={6} className="image-column">
-            <div className="image-container">
+          <Col md={6} className="admin-image-column">
+            <div className="admin-image-container">
               <img src={loginImage} alt="Login" />
             </div>
           </Col>
-          <Col md={6} className="login-column">
-            <div className="login-container">
-              <div className="login-content">
+          <Col md={6} className="admin-login-column">
+            <div className="admin-login-container">
+              <div className="admin-login-content">
                 <h2>Connexion</h2>
                 <Form onSubmit={handleSubmit}>
                   <Form.Group controlId="email">
@@ -71,11 +74,10 @@ const AdminLogin = () => {
                     />
                   </Form.Group>
 
-                  <Button variant="warning" type="submit" block>
+                  <Button variant="info" type="submit" block>
                     Se connecter
                   </Button>
                 </Form>
-                <p className="register-link">Pas encore membre ? <Link to="/register">Inscrivez-vous ici </Link></p>
               </div>
             </div>
           </Col>

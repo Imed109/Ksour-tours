@@ -1,0 +1,106 @@
+.formulaire-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .formulaire-image {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .formulaire-form {
+    width: 60%; /* Adjust as needed */
+  }
+/* Add any other global styles if needed */
+
+.formulaire-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.formulaire-form {
+  max-width: 100%;
+}
+
+.formulaire-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.formulaire-image-col {
+  display: flex;
+  align-items: center;
+}
+
+/* Add media query for responsiveness */
+@media (max-width: 768px) {
+  .formulaire-container {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+}
+/* Add any other global styles if needed */
+
+.formulaire-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.formulaire-form {
+  max-width: 100%;
+}
+
+.formulaire-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.formulaire-image-col {
+  display: flex;
+  align-items: center;
+}
+
+/* Add media query for responsiveness */
+@media (max-width: 768px) {
+  .formulaire-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+  /* Add any other global styles if needed */
+
+.formulaire-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.formulaire-form {
+  max-width: 100%;
+}
+
+.formulaire-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.formulaire-image-col {
+  display: flex;
+  align-items: center;
+}
+
+/* Add media query for responsiveness */
+@media (max-width: 768px) {
+  .formulaire-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+

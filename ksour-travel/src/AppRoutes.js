@@ -11,6 +11,7 @@ import Login from "./pages/authentification/Login";
 import Register from "./pages/authentification/Register";
 import AdminRoutes from "./pages/admin/AdminRoutes"; // Import the AdminRoutes component
 import AdminLogin from "./pages/authentification/AdminLogin";
+import Profile from "./pages/authentification/profile";
 
 const AppRoutes = () => {
 
@@ -41,7 +42,8 @@ const AppRoutes = () => {
 
   return (
     <Routes>
-   
+         <Route path="/profile" element={<Profile />} />
+
       <Route path="/airlines" element={<Airlines />} />
       <Route path="/hotels" element={<Hotels />} />
       <Route path="/Ferries" element={<Ferries />} />

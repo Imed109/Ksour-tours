@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchAirlines } from "../../JS/airlinesSlice";
 import UserLayout from "./useLayout/userlayout";
 import "./css/airlines.scss";
+import AirlinesHero from "./heros/AirlinesHero";
 
 const CustomCard = ({ company }) => {
   return (
@@ -29,6 +30,7 @@ const Airlines = () => {
 
   return (
     <UserLayout>
+      <AirlinesHero/>
       <div className="airlines-container">
         <h1>Compagnies aériennes</h1>
         <h4>Réserver un vol pas cher avec la compagnie de votre choix</h4>

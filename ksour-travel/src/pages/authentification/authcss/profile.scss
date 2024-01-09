@@ -1,0 +1,32 @@
+/* profile.scss */
+
+.profile-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    padding: 20px;
+  }
+  
+  .user-info {
+    flex: 1;
+    max-width: 50%;
+    padding: 0px;
+    // border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .user-picture {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .profile-image {
+    max-width: 100%; /* Adjust as needed */
+    max-height: 100%; /* Adjust as needed */
+    width: auto;
+    height: auto;
+  }
+  

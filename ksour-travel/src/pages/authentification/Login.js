@@ -79,6 +79,7 @@ const Login = () => {
                   </Button>
                 </Form>
                 <p className="register-link">Pas encore membre ? <Link to="/register">Inscrivez-vous ici </Link></p>
+
               </div>
             </div>
           </Col>

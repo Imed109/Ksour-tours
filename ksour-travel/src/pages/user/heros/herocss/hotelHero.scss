@@ -3,13 +3,13 @@
 .hotel-hero-container {
     position: relative;
     min-height: 250px; /* Set the desired minimum height */
-    background-image: url('../../../../assests/hero4.jpg'); /* Add your background image */
-    background-size: cover;
-    background-position: fill;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    background-image: url('../../../../assests/hero10.jpg');
+    background-size: 100% auto; /* Stretch width, maintain aspect ratio */
+    background-position: 50% 44%; /*
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    // text-align: center;
     color: #fff; /* Text color */
   }
 
