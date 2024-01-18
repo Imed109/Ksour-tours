@@ -19,10 +19,11 @@ const AdminOmra = () => {
   useEffect(() => {
     dispatch(fetchOmra());
   }, [dispatch]);
+  const apiUrl = process.env.REACT_APP_API_URL ;
 
-  const handleAddOffer = async () => {
+  const handleAddOffer = async (dispatch, newOffer, setNewOffer) => {
     try {
-      await axios.post("http://localhost:3001/omra", newOffer);
+      await axios.post(`${apiUrl}/omra`, newOffer);
       setNewOffer({
         title: "",
         description: "",
@@ -34,16 +35,15 @@ const AdminOmra = () => {
       console.error("Error adding offer:", error);
     }
   };
-
-  const handleRemoveOffer = async (offer) => {
+  const handleRemoveOffer = async (dispatch, offer) => {
     try {
-      await axios.delete(`http://localhost:3001/omra/${offer.title}`);
+      await axios.delete(`${apiUrl}/omra/${offer.title}`);
       dispatch(fetchOmra());
     } catch (error) {
       console.error("Error removing offer:", error);
     }
   };
-
+  
   return (
     <AdminLayout>
       <Container>

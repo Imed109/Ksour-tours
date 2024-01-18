@@ -18,7 +18,9 @@ export const { setHotels } = hotelsSlice.actions;
 
 export const fetchHotels = () => async (dispatch) => {
   try {
-    const response = await axios.get("http://localhost:3001/hotels");
+    // Use your backend API URL to fetch hotels
+    const apiUrl = process.env.REACT_APP_API_URL ;
+    const response = await axios.get(`${apiUrl}/hotels`);
     dispatch(setHotels(response.data));
   } catch (error) {
     console.error("Error fetching hotels:", error);

@@ -10,23 +10,23 @@ const Dashboard = () => {
   useEffect(() => {
     fetchFormulaires();
   }, []);
+  const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:3001";
 
-  const fetchFormulaires = async () => {
+  const fetchFormulaires = async (setFormulaires) => {
     try {
-      const response = await axios.get("http://localhost:3001/formulaire");
+      const response = await axios.get(`${apiUrl}/formulaire`);
       setFormulaires(response.data);
     } catch (error) {
       console.error("Error fetching formulaires:", error);
     }
   };
-
   const handleSelectFormulaire = (formulaire) => {
     setSelectedFormulaire(formulaire);
   };
   
-  const updateIsDone = async (id, isDone) => {
+  const updateIsDone = async (id, isDone, fetchFormulaires) => {
     try {
-      await axios.put(`http://localhost:3001/formulaire/${id}`, { isDone });
+      await axios.put(`${apiUrl}/formulaire/${id}`, { isDone });
       fetchFormulaires(); // Refresh formulaire data after updating
     } catch (error) {
       console.error('Error updating isDone:', error);

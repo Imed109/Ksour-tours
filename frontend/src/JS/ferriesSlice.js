@@ -18,9 +18,10 @@ export const { setShips } = ferriesSlice.actions;
 export const fetchShips = () => async (dispatch) => {
   try {
     // Use your backend API URL to fetch ships
-    const response = await axios.get("http://localhost:3001/ferries");
+    const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:3001";
+    const response = await axios.get(`${apiUrl}/ferries`);
     dispatch(setShips(response.data));
-  } catch (error) {
+  }  catch (error) {
     console.error("Error fetching ships:", error);
   }
 };

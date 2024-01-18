@@ -24,20 +24,20 @@ const AdminFerries = () => {
   const namePlaceholderText = "Nom"; // Placeholder translation
   const imagePlaceholderText = "URL de l'image"; // Placeholder translation
   const descriptionPlaceholderText = "Description"; // Placeholder translation
+  const apiUrl = process.env.REACT_APP_API_URL ;
 
-  const handleAddShip = async () => {
+  const handleAddShip = async (dispatch, newShip, setNewShip) => {
     try {
-      await axios.post("http://localhost:3001/ferries", newShip);
+      await axios.post(`${apiUrl}/ferries`, newShip);
       setNewShip({ name: "", image: "", description: "" });
       dispatch(fetchShips());
     } catch (error) {
       console.error("Error adding ship:", error);
     }
   };
-
-  const handleRemoveShip = async (shipName) => {
+  const handleRemoveShip = async (dispatch, shipName) => {
     try {
-      await axios.delete(`http://localhost:3001/ferries/${shipName}`);
+      await axios.delete(`${apiUrl}/ferries/${shipName}`);
       dispatch(fetchShips());
     } catch (error) {
       console.error("Error removing ship:", error);

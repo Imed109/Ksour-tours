@@ -13,11 +13,12 @@ const Register = () => {
     password: "",
     confirmPassword: "",
   });
+  const apiUrl = process.env.REACT_APP_API_URL;
 
   const registerUser = async (formData) => {
     try {
       const response = await axios.post(
-        "http://localhost:3001/user/register",
+        `${apiUrl}/user/register`,
         formData,
         {
           headers: {
@@ -25,13 +26,12 @@ const Register = () => {
           },
         }
       );
-
+  
       console.log("User registered:", response.data);
     } catch (error) {
       console.error("There was a problem registering the user:", error);
     }
   };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (formData.password !== formData.confirmPassword) {

@@ -18,7 +18,9 @@ export const { setOffers } = omraSlice.actions;
 
 export const fetchOmra = () => async (dispatch) => {
   try {
-    const response = await axios.get("http://localhost:3001/omra");
+    // Use your backend API URL to fetch Omra data
+    const apiUrl = process.env.REACT_APP_API_URL ;
+    const response = await axios.get(`${apiUrl}/omra`);
     dispatch(setOffers(response.data));
   } catch (error) {
     console.error("Error fetching Omra offers:", error);

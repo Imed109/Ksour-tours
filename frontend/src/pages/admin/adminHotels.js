@@ -8,6 +8,7 @@ import Container from "react-bootstrap/Container";
 import axios from "axios";
 import AdminLayout from "./adminLayout/adminLayout";
 import "./admincss/adminHotels.scss"; // Import your custom CSS for styling
+const apiUrl = process.env.REACT_APP_API_URL ;
 
 const AdminHotels = () => {
   const [newHotel, setNewHotel] = useState({
@@ -24,9 +25,9 @@ const AdminHotels = () => {
     dispatch(fetchHotels());
   }, [dispatch]);
 
-  const handleAddHotel = async () => {
+  const handleAddHotel = async (dispatch, newHotel, setNewHotel) => {
     try {
-      await axios.post("http://localhost:3001/hotels", newHotel);
+      await axios.post(`${apiUrl}/hotels`, newHotel);
       setNewHotel({
         name: "",
         image: "",
@@ -39,16 +40,15 @@ const AdminHotels = () => {
       console.error("Error adding hotel:", error);
     }
   };
-
-  const handleRemoveHotel = async (hotelName) => {
+  const handleRemoveHotel = async (dispatch, hotelName) => {
     try {
-      await axios.delete(`http://localhost:3001/hotels/${hotelName}`);
+      await axios.delete(`${apiUrl}/hotels/${hotelName}`);
       dispatch(fetchHotels());
     } catch (error) {
       console.error("Error removing hotel:", error);
     }
   };
-
+  
   return (
     <AdminLayout>
       <Container fluid className="admin-hotels-container">

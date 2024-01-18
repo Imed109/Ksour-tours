@@ -17,7 +17,8 @@ export const { setAirlines } = airlinesSlice.actions;
 
 export const fetchAirlines = () => async (dispatch) => {
   try {
-    const response = await axios.get("http://localhost:3001/airline");
+    const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:3001";
+    const response = await axios.get(`${apiUrl}/airline`);
     dispatch(setAirlines(response.data));
   } catch (error) {
     console.error("Error fetching airlines:", error);

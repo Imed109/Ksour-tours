@@ -22,12 +22,12 @@ const Formulaire = () => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
+  const apiUrl = process.env.REACT_APP_API_URL;
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (isFormValid()) {
-      try {
-        const response = await axios.post('http://localhost:3001/formulaire', formData);
+  const handleSubmit = async (formData, setFormData, isFormValid) => {
+    try {
+      if (isFormValid()) {
+        const response = await axios.post(`${apiUrl}/formulaire`, formData);
         console.log('Form Data submitted:', response.data);
         setFormData({
           fullName: "",
@@ -37,11 +37,11 @@ const Formulaire = () => {
           inquiryType: "",
           request: "",
         });
-      } catch (error) {
-        console.error('Error submitting form:', error);
+      } else {
+        alert("Please fill in all fields correctly.");
       }
-    } else {
-      alert("Please fill in all fields correctly.");
+    } catch (error) {
+      console.error('Error submitting form:', error);
     }
   };
 

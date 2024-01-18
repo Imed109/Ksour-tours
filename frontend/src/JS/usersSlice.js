@@ -1,10 +1,11 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+const apiUrl = process.env.REACT_APP_API_URL ;
 
 // Fetch all users
 export const fetchUsers = createAsyncThunk("users/fetchUsers", async () => {
   try {
-    const response = await axios.get("http://localhost:3001/user");
+    const response = await axios.get(`${apiUrl}/user`);
     return response.data;
   } catch (error) {
     throw error;
@@ -15,8 +16,8 @@ export const fetchUsers = createAsyncThunk("users/fetchUsers", async () => {
 export const fetchCurrentUser = createAsyncThunk("users/fetchCurrentUser", async (_, { getState }) => {
   try {
     const userId = localStorage.getItem("userId");
- // Assuming userId is stored in your auth state
-    const response = await axios.get(`http://localhost:3001/user/${userId}`);
+    // Assuming userId is stored in your auth state
+    const response = await axios.get(`${apiUrl}/user/${userId}`);
     return response.data;
   } catch (error) {
     throw error;

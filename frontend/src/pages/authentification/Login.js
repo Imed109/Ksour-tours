@@ -16,22 +16,19 @@ const Login = () => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
+  const apiUrl = process.env.REACT_APP_API_URL ;
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e, formData) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:3001/user/login", formData);
+      const res = await axios.post(`${apiUrl}/user/login`, formData);
       const { token, user } = res.data;
-
-    
-
+  
       localStorage.setItem("token", token);
       localStorage.setItem("user", user.fullName);
-      localStorage.setItem("token", token);
       localStorage.setItem("userId", user._id);
       localStorage.setItem("role", "user");
-
-
+  
       navigate("/");
     } catch (error) {
       console.log(error);
