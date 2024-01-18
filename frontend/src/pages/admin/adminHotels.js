@@ -25,7 +25,7 @@ const AdminHotels = () => {
     dispatch(fetchHotels());
   }, [dispatch]);
 
-  const handleAddHotel = async (dispatch, newHotel, setNewHotel) => {
+  const handleAddHotel = async () => {
     try {
       await axios.post(`${apiUrl}/hotels`, newHotel);
       setNewHotel({
@@ -40,7 +40,7 @@ const AdminHotels = () => {
       console.error("Error adding hotel:", error);
     }
   };
-  const handleRemoveHotel = async (dispatch, hotelName) => {
+  const handleRemoveHotel = async ( hotelName) => {
     try {
       await axios.delete(`${apiUrl}/hotels/${hotelName}`);
       dispatch(fetchHotels());

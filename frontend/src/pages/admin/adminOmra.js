@@ -21,7 +21,7 @@ const AdminOmra = () => {
   }, [dispatch]);
   const apiUrl = process.env.REACT_APP_API_URL ;
 
-  const handleAddOffer = async (dispatch, newOffer, setNewOffer) => {
+  const handleAddOffer = async () => {
     try {
       await axios.post(`${apiUrl}/omra`, newOffer);
       setNewOffer({
@@ -35,7 +35,7 @@ const AdminOmra = () => {
       console.error("Error adding offer:", error);
     }
   };
-  const handleRemoveOffer = async (dispatch, offer) => {
+  const handleRemoveOffer = async ( offer) => {
     try {
       await axios.delete(`${apiUrl}/omra/${offer.title}`);
       dispatch(fetchOmra());

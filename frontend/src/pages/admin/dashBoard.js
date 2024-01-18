@@ -12,7 +12,7 @@ const Dashboard = () => {
   }, []);
   const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:3001";
 
-  const fetchFormulaires = async (setFormulaires) => {
+  const fetchFormulaires = async () => {
     try {
       const response = await axios.get(`${apiUrl}/formulaire`);
       setFormulaires(response.data);

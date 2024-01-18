@@ -18,7 +18,7 @@ const Login = () => {
   };
   const apiUrl = process.env.REACT_APP_API_URL ;
 
-  const handleSubmit = async (e, formData) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const res = await axios.post(`${apiUrl}/user/login`, formData);

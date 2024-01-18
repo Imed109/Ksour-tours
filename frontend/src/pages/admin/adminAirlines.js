@@ -18,9 +18,9 @@ const AdminAirlines = () => {
   useEffect(() => {
     dispatch(fetchAirlines());
   }, [dispatch]);
-  const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:3001";
+  const apiUrl = process.env.REACT_APP_API_URL ;
 
-  const handleAddCompany = async (dispatch, newCompany, setNewCompany) => {
+  const handleAddCompany = async () => {
     try {
       await axios.post(`${apiUrl}/airline`, newCompany);
       dispatch(fetchAirlines());
@@ -30,7 +30,7 @@ const AdminAirlines = () => {
     }
   };
 
-  const handleRemoveCompany = async (dispatch, companyName) => {
+  const handleRemoveCompany = async (companyName) => {
     try {
       await axios.delete(`${apiUrl}/airline/${companyName}`);
       dispatch(fetchAirlines());
@@ -38,7 +38,6 @@ const AdminAirlines = () => {
       console.error("Error removing company:", error);
     }
   };
-
   return (
     <AdminLayout>
       <Container className="d-flex flex-column align-items-center" style={{ minHeight: "70vh", width: "90%" }}>
